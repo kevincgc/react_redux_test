@@ -8,7 +8,6 @@ export default function Textbox(props) {
         type="text"
         value={props.value}
         onChange={props.onChange}
-        placeholder={props.placeholder || ''}
       />
     </div>
   );

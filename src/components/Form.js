@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Button from './Button'
 import Textbox from './Textbox'
 import { addCard } from '../actions/index'
 
 export default function Form() {
   const dispatch = useDispatch();
-  const cards = useSelector(state => state.saveData.data);
    
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -22,7 +21,6 @@ export default function Form() {
 
   const handleAdd = () => {
     dispatch(addCard({ name, description, price, image }));
-    console.log(cards)
     handleClear();
   };
 
