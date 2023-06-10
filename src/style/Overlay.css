@@ -1,0 +1,44 @@
+/* Copied from https://medium.com/@code-flow/how-to-write-a-simple-and-reusable-overlay-component-using-react-7830dc4519a6 */
+
+.overlay__background {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.overlay__container {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 10;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.overlay__controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.overlay__close:after {
+    display: inline-block;
+    content: "\00d7";
+}
+
+.overlay__close {
+    border: none;
+    background-color: transparent;
+    font-size: 36px;
+    cursor: pointer;
+}

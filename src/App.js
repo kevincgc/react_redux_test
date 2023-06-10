@@ -4,6 +4,7 @@ import Form from './components/Form'
 import Cards from './components/Cards'
 import { Provider } from 'react-redux'
 import store from './reducers/index'
+import Details from './components/Details'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <Form />
         <Cards />
+        <Details />
       </div>
     </Provider>
   );
