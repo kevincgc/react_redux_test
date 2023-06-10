@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCard, showDetails } from '../actions/index'
+import { selectCard, showDetails, removeCard } from '../actions/index'
 
 
 export default function Cards() {
@@ -12,6 +12,11 @@ export default function Cards() {
       <h3>Cards:</h3>
       {cards.slice().reverse().map((card, index) => (
         <div key={index}>
+          <button
+            className="overlay__close"
+            type="button"
+            onClick={() => { dispatch(removeCard({ index: cards.length - 1 - index })); }}
+          />
           <a onClick={() => {
             dispatch(selectCard({ index: cards.length - 1 - index }));
             dispatch(showDetails({ val: true }));

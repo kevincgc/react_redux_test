@@ -31,6 +31,11 @@ export default function saveData(state = initialData, action) {
         ...state,
         show: action.show
       }
+    case 'REMOVE_CARD':
+      return {
+        ...state,
+        data: state.data.filter((_, i) => i !== action.index)
+      }
     default:
       return state;
   }
